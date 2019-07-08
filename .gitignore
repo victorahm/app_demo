@@ -48,6 +48,8 @@ db/*.sqlite3
 /capybara-*.html
 /gems
 /specifications
+/node_modules
+yarn*.log
 rerun.txt
 pickle-email-*.html
 .zeus.sock

@@ -24,14 +24,14 @@ group :test do
   gem 'chromedriver-helper'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'bootstrap', '~> 4.0.0'
 gem 'devise'
 gem 'devise-i18n'
 gem 'pg'
 gem 'slim-rails'
-gem 'therubyracer', :platform=>:ruby
+gem 'mini_racer', :platform=>:ruby
 group :development do
   gem 'better_errors'
+  gem "binding_of_caller"
   gem 'foreman'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
