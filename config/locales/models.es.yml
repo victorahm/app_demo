@@ -4,13 +4,33 @@ es:
       role:
           one: Rol
           other: Roles
+      user: Usuario
     attributes:
       role:
         name: Nombre
         description: Descripción
+      user:
+        name: Nombre
+        email: Correo Electronico
+        company: Compañia
+        status: Estatus
+        created_at: Fecha Activo
+      user/status:
+        active: Activo
+        inactive: Inactivo
     errors:
       models:
         role:
           attributes:
             name:
               blank: no puede estar en blanco
+        user:
+          attributes:
+            name:
+              blank: no puede estar en blanco
+            email:
+              blank: no puede estar en blanco
+              taken: ya está en uso
+            password:
+              blank: no puede estar en blanco
+              too_short: es demasiado corto (%{count} caracteres mínimo)

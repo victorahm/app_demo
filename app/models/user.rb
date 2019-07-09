@@ -1,11 +1,9 @@
 class User < ApplicationRecord
-  enum role: [:user, :vip, :admin]
-  after_initialize :set_default_role, :if => :new_record?
+  belongs_to :role
 
-  def set_default_role
-    self.role ||= :user
-  end
+  validates :name, presence: true
 
+  scope :search, ->(query) { where("name like :query or company like :query", query: "%#{query}%") }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -1,0 +1,4 @@
+.card
+  h5.card-header= I18n.t "title.new", model: User.model_name.human
+  .card-body
+    == render 'form'
