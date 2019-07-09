@@ -1,0 +1,26 @@
+es:
+  nav:
+    sigin: Iniciar Sesión
+    signout: Cerrar Sesión
+    profile: Perfil de Usuario
+  button:
+    new: "Agregar %{model}"
+    back: Regresar
+  label:
+    search: Buscar
+    edit_delete: Editar / Borrar
+    show: Mostrar
+    records: registros
+  message:
+    confirm_delete: ¿Estás seguro?
+    success_created: ! '%{model} creado(a) exitosamente.'
+    success_updated: ! '%{model} guardado(a) exitosamente.'
+    success_destroyed: ! '%{model} eliminado(a) exitosamente.'
+  title:
+    new: Agregar %{model}
+    edit: Modificar %{model}
+  helpers:
+    submit:
+      create: "Crear %{model}"
+      submit: "Guardar %{model}"
+      update: "Guardar %{model}"

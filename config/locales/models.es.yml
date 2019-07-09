@@ -1,0 +1,16 @@
+es:
+  activerecord:
+    models:
+      role:
+          one: Rol
+          other: Roles
+    attributes:
+      role:
+        name: Nombre
+        description: Descripción
+    errors:
+      models:
+        role:
+          attributes:
+            name:
+              blank: no puede estar en blanco

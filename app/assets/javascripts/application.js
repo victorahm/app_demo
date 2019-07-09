@@ -15,4 +15,5 @@
 //= require rails-ujs
 //= require turbolinks
 //= require bootstrap/dist/js/bootstrap
+//=require @fortawesome/fontawesome-free/js/all.js
 //= require_tree .

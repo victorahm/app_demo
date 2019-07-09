@@ -1,0 +1,46 @@
+.card
+  h5.card-header= Role.model_name.human(count: 2)
+  .card-body
+    .row
+      .col-sm
+        = link_to new_role_path, class: 'btn btn-primary' do
+          i.fas.fa-pencil-alt.mr-2
+          = I18n.t "button.new", model: Role.model_name.human
+    .row.my-2
+      .col-sm
+        =form_tag roles_path, method: :get, class: 'form-inline per_page'
+          label.my-1.mr-2[for="per_page"]=I18n.t "label.show"
+          = select_tag :per_page, options_for_select([1, 10, 25, 50, 100], @items), class: "custom-select my-1 mr-sm-2"
+          label.my-1.mr-2=I18n.t "label.records"
+
+      .col-sm
+        =form_tag roles_path, method: :get, class: 'form-inline search'
+          label.col-sm-2.col-form-label[for="search"]= I18n.t "label.search"
+          =search_field_tag :search, @query, class: 'form-control', placeholder: I18n.t("label.search")
+    .row
+      .col-sm
+        table.table.table-striped
+          thead
+            tr
+              th Id
+              th= Role.human_attribute_name(:name)
+              th= Role.human_attribute_name(:description)
+              th= I18n.t "label.edit_delete"
+
+          tbody
+            - @roles.each do |role|
+              tr
+                td = role.id
+                td = role.name
+                td = role.description
+                td
+                  = link_to edit_role_path(role), class: 'mr-2' do
+                    i.fas.fa-pencil-alt
+                  = link_to role, data: { confirm: I18n.t('message.confirm_delete') }, method: :delete do
+                    i.fas.fa-trash-alt
+    .row
+      .col-sm
+        == pagy_info(@pagy)
+    .row.justify-content-center
+      .col-md-auto
+        == pagy_bootstrap_nav(@pagy)

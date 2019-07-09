@@ -28,6 +28,8 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'pg'
 gem 'slim-rails'
+gem 'pagy'
+gem 'simple_form'
 gem 'mini_racer', :platform=>:ruby
 group :development do
   gem 'better_errors'

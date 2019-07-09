@@ -1,0 +1,11 @@
+= simple_form_for @role, html: {class: 'form-horizontal'} do |f|
+  =f.error_notification
+
+  = f.input :name, required: true, placeholder: Role.human_attribute_name(:name)
+  = f.input :description, placeholder: Role.human_attribute_name(:description)
+  .row.actions
+    .col-sm.text-center
+      = link_to roles_path, class: "btn btn-secondary" do
+        i.fas.fa-arrow-circle-left.mr-2
+        =I18n.t "button.back"
+    .col-sm.text-center= f.submit class: 'btn btn-primary'
