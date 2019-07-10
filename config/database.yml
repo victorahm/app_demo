@@ -43,11 +43,4 @@ test:
   pool:     5
 
 production:
-  adapter:  postgresql
-  host:     localhost
-  encoding: unicode
-  database: app_demo_production
-  pool:     5
-  username: kikoya
-  password: kikoya_password
-  template: template0
+  url: <%= ENV['DATABASE_URL'] %>
