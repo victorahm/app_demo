@@ -1,21 +1,6 @@
 App Demo
 ================
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
-
-Rails Composer is supported by developers who purchase our RailsApps tutorials.
-
-Problems? Issues?
------------
-
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
 Ruby on Rails
 -------------
 
@@ -23,26 +8,36 @@ This application requires:
 
 - Ruby 2.6.3
 - Rails 5.2.3
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
+- PostgreSQL 10
 
 Getting Started
 ---------------
+1. Configure the database connection in the file config/database.yml.
+  Currently it's configured to use unix sockets and default user (postgres)
 
-Documentation and Support
--------------------------
+2. Install bundler and needed gems:
 
-Issues
--------------
+    `$ gem install bundler`
 
-Similar Projects
-----------------
+    `$ bundle install`
 
-Contributing
-------------
+3. Create and prepare the development database:
+
+    `$ rake db:setup`
+
+4. Run the development server
+
+    `$ rails server`
+
+5. Open you browser and go to http://localhost:3000/
+
+6. You can login using the default user:
+
+    _email: user@example.com_
+
+    _password: changeme_
+
+
 
 Credits
--------
-
-License
 -------
