@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Label:
+  = @menu.label
+p
+  strong Url:
+  = @menu.url
+p
+  strong Parent:
+  = @menu.parent
+
+=> link_to 'Edit', edit_menu_path(@menu)
+'|
+=< link_to 'Back', menus_path

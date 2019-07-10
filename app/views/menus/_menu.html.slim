@@ -1,0 +1,16 @@
+.list-group-item.node-treeview4 data-nodeid="#{menu.id}"
+  - if menu.submenus.any?
+    i.fas.fa-plus.mr-2
+  - else
+    i.fas.fa-minus.mr-2
+  = menu.label
+  =link_to edit_menu_path(menu), class: 'mx-1' do
+    i.fas.fa-pencil-alt
+  =link_to new_menu_path(parent: menu), class: 'mx-1' do
+    i.fas.fa-plus-circle
+  =link_to menu, class: 'mx-1', data: { confirm: I18n.t('message.confirm_delete') }, method: :delete do
+    i.fas.fa-trash-alt
+  - if menu.submenus.any?
+    .list-group
+      - menu.submenus.each do |submenu|
+        = render submenu

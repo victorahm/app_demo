@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :menus
   root to: 'visitors#index'
   resources :roles
   resources :users do

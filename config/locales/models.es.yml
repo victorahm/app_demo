@@ -5,6 +5,7 @@ es:
           one: Rol
           other: Roles
       user: Usuario
+      menu: Menu
     attributes:
       role:
         name: Nombre
@@ -18,6 +19,10 @@ es:
       user/status:
         active: Activo
         inactive: Inactivo
+      menu:
+        label: Texto
+        url: URL
+        parent: Padre
     errors:
       models:
         role:
@@ -34,3 +39,9 @@ es:
             password:
               blank: no puede estar en blanco
               too_short: es demasiado corto (%{count} caracteres mínimo)
+        menu:
+          attributes:
+            label:
+              blank: no puede estar en blanco
+            url:
+              blank: no puede estar en blanco

@@ -1,0 +1,14 @@
+= simple_form_for(@menu) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  = f.input :label, required: true, placeholder: Menu.human_attribute_name(:label)
+  = f.input :url, required: true, placeholder: Menu.human_attribute_name(:url)
+  = f.association :parent
+
+  .row.actions
+    .col-sm.text-center
+      = link_to menus_path, class: "btn btn-secondary" do
+        i.fas.fa-arrow-circle-left.mr-2
+        =I18n.t "button.back"
+    .col-sm.text-center= f.submit class: 'btn btn-primary'

@@ -1,0 +1,14 @@
+.card
+  h5.card-header= Menu.model_name.human(count: 2)
+  .card-body
+    .row
+      .col-sm
+        = link_to new_menu_path, class: 'btn btn-primary' do
+          i.fas.fa-pencil-alt.mr-2
+          = I18n.t "button.new", model: Menu.model_name.human
+    .row.my-2
+      .col-sm
+        #menus.treeview
+          .list-group.list-group-root.well
+            - @menus.each do |menu|
+              = render menu
