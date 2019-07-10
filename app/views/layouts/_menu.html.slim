@@ -1,3 +1,4 @@
 nav#navbarSupportedContent.nav.nav-root.flex-column.d-none.d-md-block
-  - Menu.roots.each do |menu|
-    = render 'layouts/menu_item', menu: menu
+  -if user_signed_in?
+    - Menu.roots.each do |menu|
+      = render 'layouts/menu_item', menu: menu
