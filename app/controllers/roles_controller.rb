@@ -1,6 +1,8 @@
 class RolesController < ApplicationController
   include Pagy::Backend
 
+  before_action :authenticate_user!
+
   before_action :set_role, only: [:show, :edit, :update, :destroy]
 
   # GET /roles

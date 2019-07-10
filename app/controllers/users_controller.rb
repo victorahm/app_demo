@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   include Pagy::Backend
 
+  before_action :authenticate_user!
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -24,6 +26,23 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+  end
+
+  # GET /users/edit_profile
+  def edit_profile
+    @user = current_user
+  end
+
+  # POST /users/update_profile
+  def update_profile
+    @user = current_user
+    if @user.update(user_params.delete_if{|k,v| v.blank?})
+      # Sign in the user by passing validation in case their password changed
+      bypass_sign_in(@user)
+      redirect_to root_path, notice: t('message.success_updated', :model => User.model_name.human)
+    else
+      render "edit_profile"
+    end
   end
 
   # POST /users

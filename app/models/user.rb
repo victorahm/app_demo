@@ -6,6 +6,6 @@ class User < ApplicationRecord
   scope :search, ->(query) { where("name like :query or company like :query", query: "%#{query}%") }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, #:registerable,
          :recoverable, :rememberable, :validatable
 end

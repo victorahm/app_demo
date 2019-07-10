@@ -1,0 +1,21 @@
+.card
+  h5.card-header= I18n.t "title.edit", model: User.model_name.human
+  .card-body
+    = simple_form_for(@user, url: update_profile_users_path ) do |f|
+      = f.error_notification
+      = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+      = f.input :name, required: true, placeholder: User.human_attribute_name(:name)
+      = f.input :email, required: true, placeholder: User.human_attribute_name(:email)
+      = f.input :password
+      = f.input :password_confirmation
+      = f.association :role
+      = f.input :company
+      = f.input :status
+
+      .row.actions
+        .col-sm.text-center
+          = link_to :back, class: "btn btn-secondary" do
+            i.fas.fa-arrow-circle-left.mr-2
+            =I18n.t "button.back"
+        .col-sm.text-center= f.submit class: 'btn btn-primary'

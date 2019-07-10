@@ -1,6 +1,6 @@
 es:
   nav:
-    sigin: Iniciar Sesión
+    signin: Iniciar Sesión
     signout: Cerrar Sesión
     profile: Perfil de Usuario
   button:

@@ -14,14 +14,14 @@
               i.fas.fa-user.mr-2
               = current_user.name
             .dropdown-menu.dropdown-menu-right aria-labelledby="navbarDropdown"
-              a.dropdown-item href="#"
+              =link_to edit_profile_users_path, class: 'dropdown-item' do
                 i.fas.fa-user.mr-1
                 = I18n.t "nav.profile"
-              a.dropdown-item href="#"
+              =link_to destroy_user_session_path, method: :delete, class: 'dropdown-item' do
                 i.fas.fa-sign-out-alt.mr-2
                 = I18n.t "nav.signout"
         -else
           li.nav-item
-            a.nav-link[href="#"]
+            = link_to new_user_session_path, class: 'nav-link' do
               i.fas.fa-sign-in-alt.mr-2
               = I18n.t "nav.signin"
