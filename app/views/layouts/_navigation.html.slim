@@ -1,27 +1,24 @@
 / navigation styled for Bootstrap 4.0
 .container-fluid
   nav.navbar.navbar-expand-lg.navbar-light.bg-light
-    a.navbar-brand href="/"  HOME
-    button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
+    button.navbar-toggler.mr-2 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
       span.navbar-toggler-icon
-    #navbarSupportedContent.collapse.navbar-collapse
-      / ul.navbar-nav.mr-auto
-      /   = render 'layouts/navigation_links'
-      ul.navbar-nav.ml-auto
-        -if user_signed_in?
-          li.nav-item.dropdown
-            a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
-              i.fas.fa-user.mr-2
-              = current_user.name
-            .dropdown-menu.dropdown-menu-right aria-labelledby="navbarDropdown"
-              =link_to edit_profile_users_path, class: 'dropdown-item' do
-                i.fas.fa-user.mr-1
-                = I18n.t "nav.profile"
-              =link_to destroy_user_session_path, method: :delete, class: 'dropdown-item' do
-                i.fas.fa-sign-out-alt.mr-2
-                = I18n.t "nav.signout"
-        -else
-          li.nav-item
-            = link_to new_user_session_path, class: 'nav-link' do
-              i.fas.fa-sign-in-alt.mr-2
-              = I18n.t "nav.signin"
+    a.navbar-brand href="/"  HOME
+    ul.navbar-nav.ml-auto
+      -if user_signed_in?
+        li.nav-item.dropdown
+          a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+            i.fas.fa-user.mr-2
+            = current_user.name
+          .dropdown-menu.dropdown-menu-right aria-labelledby="navbarDropdown"
+            =link_to edit_profile_users_path, class: 'dropdown-item' do
+              i.fas.fa-user.mr-1
+              = I18n.t "nav.profile"
+            =link_to destroy_user_session_path, method: :delete, class: 'dropdown-item' do
+              i.fas.fa-sign-out-alt.mr-2
+              = I18n.t "nav.signout"
+      -else
+        li.nav-item
+          = link_to new_user_session_path, class: 'nav-link' do
+            i.fas.fa-sign-in-alt.mr-2
+            = I18n.t "nav.signin"

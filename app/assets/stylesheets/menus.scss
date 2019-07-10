@@ -44,3 +44,11 @@ nav.nav.nav-root{
 .nav.nav-root > .nav > .nav > .nav > a {
   padding-left: 60px;
 }
+
+#navbarSupportedContent{
+  z-index: 100;
+}
+
+#navbarSupportedContent.show{
+  display: block !important;
+}
