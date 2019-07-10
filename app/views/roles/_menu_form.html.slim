@@ -1,0 +1,7 @@
+.list-group-item.node-treeview4.form-check
+  =check_box_tag 'menus_ids[]', menu.id, @role.menu_ids.include?(menu.id), class: 'form-check-input'
+  =label_tag menu.label, nil, class: 'form-check-label'
+
+  .list-group
+    - menu.submenus.each do |submenu|
+        = render 'menu_form', menu: submenu

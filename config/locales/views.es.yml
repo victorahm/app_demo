@@ -6,6 +6,7 @@ es:
   button:
     new: "Agregar %{model}"
     back: Regresar
+    save: Guardar
   label:
     search: Buscar
     edit_delete: Editar / Borrar

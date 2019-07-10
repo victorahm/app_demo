@@ -3,7 +3,7 @@ class RolesController < ApplicationController
 
   before_action :authenticate_user!
 
-  before_action :set_role, only: [:show, :edit, :update, :destroy]
+  before_action :set_role, only: [:show, :edit, :update, :destroy, :edit_menus, :update_menus]
 
   # GET /roles
   # GET /roles.json
@@ -26,6 +26,20 @@ class RolesController < ApplicationController
 
   # GET /roles/1/edit
   def edit
+  end
+
+  # GET /roles/1/edit_menus
+  def edit_menus
+  end
+
+  # POST /roles/1/update_menus
+  def update_menus
+    @role.menu_ids = params[:menus_ids]
+    if @role.save
+      redirect_to roles_path, notice: t('message.success_updated', :model => Role.model_name.human)
+    else
+      render 'edit_menus'
+    end
   end
 
   # POST /roles
