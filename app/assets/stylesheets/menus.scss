@@ -23,3 +23,24 @@
 .list-group.list-group-root > .list-group > .list-group > .list-group-item {
   padding-left: 45px;
 }
+
+nav.nav.nav-root{
+  padding: 0;
+  overflow: hidden;
+}
+
+.nav.nav-root .nav {
+  margin-bottom: 0;
+}
+
+.nav.nav-root > .nav > a {
+  padding-left: 30px;
+}
+
+.nav.nav-root > .nav > .nav > a {
+  padding-left: 45px;
+}
+
+.nav.nav-root > .nav > .nav > .nav > a {
+  padding-left: 60px;
+}

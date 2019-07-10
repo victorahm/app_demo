@@ -12,5 +12,9 @@ html
     header
       == render 'layouts/navigation'
     main.py-2[role="main"]
-      == render 'layouts/messages'
-      == yield
+      .row
+        .col-md-2.col-sm-12
+          == render 'layouts/menu'
+        .col-md-10.col-sm-12.px-5
+          == render 'layouts/messages'
+          == yield

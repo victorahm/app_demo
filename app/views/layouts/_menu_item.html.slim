@@ -1,0 +1,5 @@
+- if current_user.role.menu_ids.include? menu.id
+  =link_to menu.label, menu.url, class: 'nav-link'
+nav.nav.flex-column
+  -menu.submenus.each do |submenu|
+    = render 'layouts/menu_item', menu: submenu
